@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { defineProps } from "vue"
 
-const props = defineProps<{ count: number, fn: Function, sign: string }>()
-
-console.log(`Rerender: "${props.sign}" Button`)
+const { disabled, fn, sign } = defineProps<{ disabled: boolean, fn: Function, sign: string }>()
+console.log(`Script: "${sign}" button`)
 </script>
 
 <template>
-    <button class="button" :disabled="props.count === 0" @click="props.fn()"
-        :aria-label="props.sign">
-        {{ props.sign }}
+    {{ console.log(`Render: "${sign}" Button`) }}
+    <button class="button" :disabled="disabled" @click="fn()" :aria-label="sign">
+        {{ sign }}
     </button>
 </template>
 

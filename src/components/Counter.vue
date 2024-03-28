@@ -15,16 +15,7 @@ function add() {
     if (count.value < 100) count.value++
 }
 
-document.addEventListener("keydown", ({ code }) => {
-    switch (code) {
-        case "ArrowRight":
-            return add()
-        case "ArrowLeft":
-            return subtract()
-    }
-})
-
-console.log("Rerender: Counter")
+console.log('Script: Counter')
 
 async function celebrate() {
     const defaults = {
@@ -80,10 +71,11 @@ async function celebrate() {
 </script>
 
 <template>
+    {{ console.log("Render: Counter") }}
     <div class='wrapper'>
-        <Buttons :count="count" :fn="subtract" sign="-" />
+        <Buttons :disabled="count === 0" :fn="subtract" sign="-" />
         <Gauge :value="count" :recurse="false" />
-        <Buttons :count="count" :fn="add" sign="+" />
+        <Buttons :disabled="count === 100" :fn="add" sign="+" />
     </div>
 </template>
 

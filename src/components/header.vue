@@ -1,4 +1,9 @@
+<script setup>
+console.log('Script: Header')
+</script>
+
 <template>
+    {{ console.log('Render: Header') }}
     <nav class='App-navbar'>
         <svg class="App-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69">
             <path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z"

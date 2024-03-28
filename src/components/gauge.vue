@@ -3,19 +3,19 @@ import { defineProps, ref } from "vue"
 
 const props = defineProps(['value', 'recurse'])
 const bool = ref(false)
-
+console.log("Script: Gauge")
 setTimeout(() => bool.value = props.recurse, 10)
 
-console.log("Rerender: Gauge")
 </script>
 
 <template>
     <div role='feed' class="wrapper" @click="bool = true">
+        {{ console.log("Render: Gauge") }}
         <svg viewBox="0 0 120 120" class="gauge">
             <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#18B6F6" />
-                    <stop offset="1000%" stop-color="#AC7FF4" />
+                    <stop offset="0%" stop-color="#41b883" />
+                    <stop offset="1000%" stop-color="#34495e" />
                 </linearGradient>
             </defs>
 
