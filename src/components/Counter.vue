@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from "vue"
+import { ref } from "vue"
 import Buttons from "./Button.vue"
 import Gauge from "./gauge.vue"
 

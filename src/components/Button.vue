@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue"
-
 const { disabled, fn, sign } = defineProps<{ disabled: boolean, fn: Function, sign: string }>()
 console.log(`Script: "${sign}" button`)
 </script>

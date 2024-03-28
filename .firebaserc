@@ -1,0 +1,13 @@
+{
+  "projects": {},
+  "targets": {
+    "io-tue": {
+      "hosting": {
+        "Vue": [
+          "io-vue"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
