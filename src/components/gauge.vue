@@ -3,13 +3,13 @@ import { ref } from "vue"
 
 const props = defineProps(['value', 'recurse'])
 const bool = ref(false)
-console.log('Script: Gauge', `[${props.value}]`)
+console.log('Script: Gauge')
 setTimeout(() => bool.value = props.recurse, 0)
 
 </script>
 
 <template>
-    {{ console.log('Render: Gauge', `[${props.value}]`) }}
+    {{ console.log('Render: Gauge') }}
     <div role='feed' class="wrapper" @click="bool = true">
         <svg viewBox="0 0 120 120" class="gauge">
             <defs>
@@ -28,9 +28,9 @@ setTimeout(() => bool.value = props.recurse, 0)
         <span class="value">{{ props.value }}</span>
     </div>
 
-    <div v-if="bool && props.value < 120" class="recurse">
-        <Gauge :value="props.value + 1" :recurse=true />
-        <Gauge :value="props.value + 5" :recurse=true />
+    <div v-if="bool && props.value < 100" class="recurse">
+        <Gauge :value="props.value" :recurse=true />
+        <Gauge :value="props.value" :recurse=true />
     </div>
 </template>
 

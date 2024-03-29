@@ -25,14 +25,4 @@ console.log('Script: Header')
     height: 50px;
     pointer-events: none;
 }
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 </style>
