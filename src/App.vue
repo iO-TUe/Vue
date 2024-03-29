@@ -2,15 +2,15 @@
 import Counter from './components/Counter.vue'
 import Header from './components/header.vue'
 
-console.log("Script: App")
+// console.log("Script: App")
 </script>
 
 <template>
-  {{ console.log("Render: App") }}
+  <!-- {{ console.log("Render: App") }} -->
   <div class="App">
     <Header />
     <main class="App-main">
-      <Counter :initialValue="95" />
+      <Counter :initialValue="80" />
     </main>
   </div>
 </template>

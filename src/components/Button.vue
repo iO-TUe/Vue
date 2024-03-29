@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const { disabled, fn, sign } = defineProps<{ disabled: boolean, fn: Function, sign: string }>()
-console.log(`Script: "${sign}" button`)
+// console.log(`Script: "${sign}" button`)
 </script>
 
 <template>
-    {{ console.log(`Render: "${sign}" Button`) }}
+    <!-- {{ console.log(`Render: "${sign}" Button`) }} -->
     <button class="button" :disabled="disabled" @click="fn()" :aria-label="sign">
         {{ sign }}
     </button>
