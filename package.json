@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "deploy": "npm build && firebase deploy --only hosting:io-vue"
+    "deploy": "npm run build && firebase deploy --only hosting:io-vue"
   },
   "dependencies": {
     "vue": "^3.4.21"

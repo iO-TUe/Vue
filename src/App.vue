@@ -7,7 +7,7 @@ console.log("Script: App")
 
 <template>
   {{ console.log("Render: App") }}
-  <div class="app">
+  <div class="App">
     <Headers />
     <main class="App-main">
       <Counter :initialValue="95" />
@@ -29,9 +29,5 @@ console.log("Script: App")
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 </style>
