@@ -4,7 +4,7 @@ import { ref } from "vue"
 const props = defineProps(['value', 'recurse'])
 const bool = ref(false)
 console.log("Script: Gauge")
-setTimeout(() => bool.value = props.recurse, 10)
+setTimeout(() => bool.value = props.recurse, 0)
 
 </script>
 
