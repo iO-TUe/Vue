@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Counter from './components/Counter.vue'
-import Headers from './components/header.vue'
+import Header from './components/header.vue'
 
 console.log("Script: App")
 </script>
@@ -8,7 +8,7 @@ console.log("Script: App")
 <template>
   {{ console.log("Render: App") }}
   <div class="App">
-    <Headers />
+    <Header />
     <main class="App-main">
       <Counter :initialValue="95" />
     </main>

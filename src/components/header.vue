@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 console.log('Script: Header')
 </script>
 
