@@ -3,14 +3,14 @@ import { ref } from "vue"
 
 const props = defineProps(['value', 'recurse'])
 const bool = ref(false)
-console.log("Script: Gauge")
+console.log('Script: Gauge', `[${props.value}]`)
 setTimeout(() => bool.value = props.recurse, 0)
 
 </script>
 
 <template>
+    {{ console.log('Render: Gauge', `[${props.value}]`) }}
     <div role='feed' class="wrapper" @click="bool = true">
-        {{ console.log("Render: Gauge") }}
         <svg viewBox="0 0 120 120" class="gauge">
             <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -22,9 +22,8 @@ setTimeout(() => bool.value = props.recurse, 0)
             <circle r="56" cx="60" cy="60" stroke-width="8" style="fill: #000; stroke: #0000">
             </circle>
 
-            <circle r="56" cx="60" cy="60" stroke-width="8" :style="`transform: rotate(-87.9537deg);
-                stroke-dasharray: ${props.value * 3.51}, 351.858; fill:none; transform-origin:50%
-                50%; stroke-linecap:round; stroke:url(#gradient)`"></circle>
+            <circle r="56" cx="60" cy="60" stroke-width="8" class="stroke"
+                :style="`stroke-dasharray: ${props.value * 3.51}, 351.858;`"></circle>
         </svg>
         <span class="value">{{ props.value }}</span>
     </div>
