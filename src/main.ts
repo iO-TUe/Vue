@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createWebHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import Counter from './components/counter.vue'
 import './main.css'
@@ -10,7 +10,7 @@ const router = createRouter({
         {
             path: '/',
             component: Counter,
-            props: { initialValue: 80, maxValue: 13, recurse: true }
+            props: { initialValue: 80, maxValue: 12, recurse: true }
         },
         {
             path: '/load',
