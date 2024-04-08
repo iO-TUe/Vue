@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import Counter from './components/Counter.vue'
 import Header from './components/header.vue'
-
 // console.log("Script: App")
 </script>
 
@@ -10,7 +8,7 @@ import Header from './components/header.vue'
   <div class="App">
     <Header />
     <main class="App-main">
-      <Counter :initialValue="80" />
+      <RouterView />
     </main>
   </div>
 </template>
