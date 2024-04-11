@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 
-const props = defineProps(['value', 'max', 'recurse'])
+const props = defineProps<{ value: number, max: number, recurse: boolean, fn?: () => number }>()
 const bool = ref(false)
 // console.log('Script: Gauge')
 setTimeout(() => bool.value = props.recurse, 0)
@@ -10,7 +10,7 @@ setTimeout(() => bool.value = props.recurse, 0)
 
 <template>
     <!-- {{ console.log('Render: Gauge') }} -->
-    <div role='feed' class="wrapper" @click="bool = true">
+    <div role='feed' class="wrapper" @click="props.fn ? props.fn() : bool = true">
         <svg viewBox="0 0 120 120" class="gauge">
             <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">

@@ -1,5 +1,7 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "io-tue"
+  },
   "targets": {
     "io-tue": {
       "hosting": {

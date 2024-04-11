@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { disabled, fn, sign } = defineProps<{ disabled: boolean, fn: Function, sign: string }>()
+const { disabled, fn, sign } = defineProps<{ disabled: boolean, fn: () => void, sign: string }>()
 // console.log(`Script: "${sign}" button`)
 </script>
 
