@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue"
-import Buttons from "./button.vue"
-import Gauge from "./gauge.vue"
+import { ref } from "vue";
+import Buttons from "./button.vue";
+import Gauge from "./gauge.vue";
 
 const props = defineProps<{ initialValue: number, maxValue: number, recurse: boolean }>()
 const count = ref(props.initialValue)
@@ -23,7 +23,7 @@ function add() {
         <Buttons :disabled="count === 0" :fn="subtract" sign="-" />
         <div class="counters">
             <Gauge v-for="(_, idx) in recurse ? 1 : props.maxValue" :value="count"
-                :max="props.maxValue" :recurse="false" :fn="() => idx" />
+                :max="props.maxValue" :recurse="false"  />
         </div>
         <Buttons :disabled="count === 100" :fn="add" sign="+" />
     </div>

@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import Item from '../components/item.vue'
 import Counter from '../components/counter.vue'
-import { ref } from "vue"
+import { ref, type Ref } from "vue"
 
 let id = 0
-const items: { id: number; text: string }[] = ref([])
-let input = ref("")
+const items = ref<{ id: number; text: string }[]>([])
+const input = ref("")
 
 function addItem({ key }: KeyboardEvent) {
-    if (key === "Enter" && input) {
+    if (key === "Enter" && input.value) {
         items.value.push({ id: id++, text: input.value })
         input.value = ""
-        // items = items
     }
 }
 
-function removeItem(rid) {
+function removeItem(rid: number) {
     items.value = items.value.filter(({ id }) => id !== rid)
 }
 </script>
