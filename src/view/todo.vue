@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import Item from '../components/item.vue'
+import { onMounted, ref } from 'vue'
 import Counter from '../components/counter.vue'
-import { ref, type Ref } from "vue"
+import Item from '../components/item.vue'
 
 let id = 0
 const items = ref<{ id: number; text: string }[]>([])
 const input = ref("")
+const i = ref<HTMLInputElement>()
 
-function addItem({ key }: KeyboardEvent) {
-    if (key === "Enter" && input.value) {
+function addItem() {
+    if (input.value) {
         items.value.push({ id: id++, text: input.value })
         input.value = ""
     }
@@ -17,13 +18,17 @@ function addItem({ key }: KeyboardEvent) {
 function removeItem(rid: number) {
     items.value = items.value.filter(({ id }) => id !== rid)
 }
+
+onMounted(() => {
+    i.value!.disabled = false
+})
 </script>
 
 <template>
     <section id="todo">
         <label>
             <h2>Add new item</h2>
-            <input id="input" v-model="input" @keyup="addItem" />
+            <input ref="i" disabled id="input" v-model="input" @keyup.enter="addItem" />
         </label>
         <ul class="list">
             <Item v-for="item in items" :key="item.id" :item="item" :remove="removeItem" />
@@ -33,6 +38,7 @@ function removeItem(rid: number) {
         <Counter :initialValue="50" :maxValue=500 :recurse="false" />
     </section>
 </template>
+
 <style>
 input {
     width: 100%;
