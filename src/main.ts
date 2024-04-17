@@ -1,9 +1,9 @@
+import App from '@/App.vue'
+import Counter from '@/components/counter.vue'
+import Todo from '@/view/todo.vue'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
-import App from './App.vue'
-import Counter from './components/counter.vue'
 import './main.css'
-import Todo from './view/todo.vue'
 
 const router = createRouter({
     history: createWebHistory(),
