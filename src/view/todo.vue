@@ -5,13 +5,12 @@ import Item from '../components/item.vue'
 
 let id = 0
 const items = ref<{ id: number; text: string }[]>([])
-const input = ref("")
-const i = ref<HTMLInputElement>()
+const input = ref<HTMLInputElement>()
 
 function addItem() {
     if (input.value) {
-        items.value.push({ id: id++, text: input.value })
-        input.value = ""
+        items.value.push({ id: id++, text: input.value.value })
+        input.value.value = ""
     }
 }
 
@@ -20,7 +19,7 @@ function removeItem(rid: number) {
 }
 
 onMounted(() => {
-    i.value!.disabled = false
+    input.value!.disabled = false
 })
 </script>
 
@@ -28,14 +27,14 @@ onMounted(() => {
     <section id="todo">
         <label>
             <h2>Add new item</h2>
-            <input ref="i" disabled id="input" v-model="input" @keyup.enter="addItem" />
+            <input ref="input" id="input" @keyup.enter="addItem" disabled />
         </label>
         <ul class="list">
             <Item v-for="item in items" :key="item.id" :item="item" :remove="removeItem" />
         </ul>
     </section>
     <section id="counters">
-        <Counter :initialValue="50" :maxValue=500 :recurse="false" />
+        <Counter :initialValue="50" :maxValue=5 :recurse="false" />
     </section>
 </template>
 
@@ -46,6 +45,10 @@ input {
 
 .list {
     padding-inline-start: 0;
+}
+
+#counters {
+    height: 10vh;
 }
 
 #counters .counters {
