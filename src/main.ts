@@ -10,7 +10,7 @@ const router = createRouter({
     routes: [{
         path: '/',
         component: Counter,
-        props: { initialValue: 80, maxValue: 12, recurse: true }
+        props: { initialValue: 80, maxValue: 10, recurse: true }
     }, {
         path: '/load',
         component: Counter,

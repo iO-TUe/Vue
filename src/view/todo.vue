@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import Counter from '../components/counter.vue'
+import Counter from '../components/counter.gen.vue'
 import Item from '../components/item.vue'
 
 let id = 0
