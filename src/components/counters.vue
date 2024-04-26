@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue"
-import Button from "../button.vue"
-import Gauge from "../gauge.vue"
+import Button from "./button.vue"
+import Gauge from "./gauge.vue"
 
 const props = defineProps<{ initialValue: number, maxValue: number, recurse: boolean }>()
 const count = ref(props.initialValue)
