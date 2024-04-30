@@ -14,6 +14,7 @@ function addItem() {
     }
 }
 
+
 function removeItem(rid: number) {
     items.value = items.value.filter(({ id }) => id !== rid)
 }
