@@ -18,7 +18,7 @@ onMounted(() => {
     if (typeof window != 'undefined') {
         const delay = Date.now() + 50
         while (Date.now() < delay) {
-            console.log()
+            console.log()   
         }
     }
 })
@@ -31,7 +31,7 @@ onMounted(() => {
     <div class='wrapper'>
         <Button :disabled="count === 0" :fn="subtract" sign="-" />
         <div class="counters">
-            <Gauge v-for="(_, idx) in recurse ? 1 : props.maxValue" :value="count"
+            <Gauge v-for="(_, idx) in recurse ? 1 : props.maxValue" :key="idx" :value="count"
                 :max="props.maxValue" :recurse="false" />
         </div>
         <Button :disabled="count === 100" :fn="add" sign="+" />

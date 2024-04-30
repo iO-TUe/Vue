@@ -8,9 +8,9 @@ const items = ref<{ id: number; text: string }[]>([])
 const input = ref<HTMLInputElement>()
 
 function addItem() {
-    if (input.value) {
-        items.value.push({ id: id++, text: input.value.value })
-        input.value.value = ""
+    if (input.value!.value) {
+        items.value.push({ id: id++, text: input.value!.value })
+        input.value!.value = ""
     }
 }
 

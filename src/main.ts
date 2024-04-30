@@ -1,5 +1,5 @@
 import App from '@/App.vue'
-import Counter from '@/components/counters.vue'
+import Counter from '@/components/counter.vue'
 import Todo from '@/view/todo.vue'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
