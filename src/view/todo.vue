@@ -1,34 +1,28 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import Counter from '../components/counter.gen.vue'
 import Item from '../components/item.vue'
 
 let id = 0
 const items = ref<{ id: number; text: string }[]>([])
-const input = ref<HTMLInputElement>()
 
-function addItem() {
-    if (input.value!.value) {
-        items.value.push({ id: id++, text: input.value!.value })
-        input.value!.value = ""
+function addItem({ target }: KeyboardEvent) {
+    if ((target as HTMLInputElement).value) {
+        items.value.push({ id: id++, text: (target as HTMLInputElement).value });
+        (target as HTMLInputElement).value = ""
     }
 }
-
 
 function removeItem(rid: number) {
     items.value = items.value.filter(({ id }) => id !== rid)
 }
-
-onMounted(() => {
-    input.value!.disabled = false
-})
 </script>
 
 <template>
     <section id="todo">
         <label>
             <h2>Add new item</h2>
-            <input ref="input" id="input" @keyup.enter="addItem" disabled />
+            <input id="input" @keyup.enter="addItem" />
         </label>
         <ul class="list">
             <Item v-for="item in items" :key="item.id" :item="item" :remove="removeItem" />
