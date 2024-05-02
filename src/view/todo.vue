@@ -7,9 +7,9 @@ let id = 0
 const items = ref<{ id: number; text: string }[]>([])
 
 function addItem({ target }: KeyboardEvent) {
-    if ((target as HTMLInputElement).value) {
-        items.value.push({ id: id++, text: (target as HTMLInputElement).value });
-        (target as HTMLInputElement).value = ""
+    if ((<HTMLInputElement>target).value) {
+        items.value.push({ id: id++, text: (<HTMLInputElement>target).value });
+        (<HTMLInputElement>target).value = ""
     }
 }
 
